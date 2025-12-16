@@ -27,15 +27,10 @@ pip install .
 ## Usage
 
 ⚠️ Before using SAM Audio, please request access to the checkpoints on the SAM Audio
-Hugging Face [repo](https://huggingface.co/facebook/sam-audio). Once accepted, you
+Hugging Face [repo](https://huggingface.co/facebook/sam-audio-large). Once accepted, you
 need to be authenticated to download the checkpoints. You can do this by running
 the following [steps](https://huggingface.co/docs/huggingface_hub/en/quick-start#authentication)
 (e.g. `hf auth login` after generating an access token.)
-
-### Available Models
-
-- `facebook/sam-audio-1b` - 1 billion parameter model
-- `facebook/sam-audio-3b` - 3 billion parameter model (recommended)
 
 ### Basic Text Prompting
 
@@ -43,8 +38,8 @@ the following [steps](https://huggingface.co/docs/huggingface_hub/en/quick-start
 from sam_audio import SAMAudio, SAMAudioProcessor
 import torchaudio
 
-model = SAMAudio.from_pretrained("facebook/sam-audio-3b")
-processor = SAMAudioProcessor.from_pretrained("facebook/sam-audio-3b")
+model = SAMAudio.from_pretrained("facebook/sam-audio-large")
+processor = SAMAudioProcessor.from_pretrained("facebook/sam-audio-large")
 model = model.eval().cuda()
 
 file = "<audio file>" # audio file path or torch tensor
